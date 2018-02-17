@@ -5,7 +5,7 @@ USER root
 ENV JDK_FILE jdk-6u45-linux-x64.tar.gz
 
 RUN set -x \
-    && curl -O https://www.dropbox.com/s/ayugx51xcphrz08/$JDK_FILE?dl=1 \
+    && curl -o $JDK_FILE -L https://www.dropbox.com/s/ayugx51xcphrz08/$JDK_FILE?dl=1 \
     && tar -xvf $JDK_FILE \
     && rm $JDK_FILE \
     && chmod -Rf 755 /opt \
